@@ -1,0 +1,6 @@
+# Readable (unencrypted) sources and the password never go in this public repo.
+.staticrypt-password
+source/
+_build/
+.DS_Store
+node_modules/
