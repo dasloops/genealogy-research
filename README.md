@@ -1,33 +1,16 @@
 # genealogy-research
 
-A repo for displaying genealogy research to family and friends.
+**This site has moved.** The family history research now lives at Ellingtree:
+https://ellingtree-research-gold.vercel.app/ (same family password).
 
-The family trees here are **password-protected**: each page is encrypted with
-[StatiCrypt](https://github.com/robinmoisson/staticrypt) (AES-256) before it is
-committed, so this public repo only ever contains encrypted pages. Readable
-copies never leave the researcher's computer.
+The old Holbrook–Low tree link,
+https://dasloops.github.io/genealogy-research/holbrook-low/, now redirects to the
+tree on the new site: https://ellingtree-research-gold.vercel.app/trees/holbrook-low/
 
-## Trees
+The research, data and site code are in the private `ellingtree-research` repo.
 
-| Tree | Page |
-| --- | --- |
-| Holbrook-Low Colonial Tree | https://dasloops.github.io/genealogy-research/holbrook-low/ |
+## What's here
 
-## Updating a tree
-
-1. Edit the readable tree in `~/Documents/GENEALOGY/...` as usual.
-2. Run `./encrypt.sh`. It re-encrypts every tree and prints each share link.
-3. Commit and push. GitHub Pages updates in a minute or two.
-
-The password lives in `.staticrypt-password` (git-ignored, local only).
-`.staticrypt.json` holds the salt; keep it committed so share links stay the
-same across re-encryptions.
-
-To add a tree, add a line to the `TREES` list in `encrypt.sh`.
-
-## Safety net
-
-A pre-commit hook (`.githooks/pre-commit`) refuses to commit any `.html` page
-that isn't encrypted. After a fresh clone, enable it with:
-
-    git config core.hooksPath .githooks
+- `holbrook-low/index.html` and `index.html`: redirects to the new site.
+- `encrypt.sh`, `.staticrypt.json`, `.githooks/`: the old StatiCrypt setup, kept for
+  reference. Don't run `encrypt.sh` again: it would replace the redirect with the old tree.
